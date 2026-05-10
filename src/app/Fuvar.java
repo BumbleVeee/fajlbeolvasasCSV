@@ -3,13 +3,13 @@ package app;
 public class Fuvar {
     private String rsz;
     private int ido;
-    private double osszeg;
+    private double ar;
     private String fizetesMod;
 
-    public Fuvar(String rsz, int ido, double osszeg, String fizetesMod) {
+    public Fuvar(String rsz, int ido, double ar, String fizetesMod) {
         this.rsz = rsz;
         this.ido = ido;
-        this.osszeg = osszeg;
+        this.ar = ar;
         this.fizetesMod = fizetesMod;
     }
 
@@ -21,8 +21,8 @@ public class Fuvar {
         return ido;
     }
 
-    public double getOsszeg() {
-        return osszeg;
+    public double getAr() {
+        return ar;
     }
 
     public String getFizetesMod() {
