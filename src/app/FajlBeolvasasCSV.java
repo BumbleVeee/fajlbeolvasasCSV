@@ -4,7 +4,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class FajlBeolvasasCSV {
 
@@ -159,5 +161,26 @@ public class FajlBeolvasasCSV {
         
         //8. feladat
         System.out.println("\nMelyik autó mennyi fuvart teljesített?: ");
+        
+        List<Fuvar> autok = new ArrayList<>();
+        
+        Map<String, Integer> nm = new HashMap<>();
+        
+        for(Fuvar fuvar : autok){
+            String kulcs = fuvar.getRsz();
+            if(nm.containsKey(kulcs)){
+                int ertek = nm.get(kulcs);
+                nm.put(kulcs, ++ertek);
+            }else{
+                nm.put(kulcs, 1);
+            }
+        }
+        
+        for (Map.Entry<String, Integer> entry : nm.entrySet()) {
+            String kulcs = entry.getKey();
+            Integer ertek = entry.getValue();
+            
+            System.out.printf("[%s] = %d\n", kulcs, ertek);
+        }
     }
 }
